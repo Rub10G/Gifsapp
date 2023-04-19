@@ -6,11 +6,15 @@ import { GifsService } from '../../gifs/services/gifs.service';
   templateUrl: './sidebar.component.html',
 })
 export class SidebarComponent {
-   
+
   get historial(){
     return this.GifsService.historial;
   }
 
   constructor(private GifsService: GifsService) { }
+
+  borrarItem(index: number) {
+    this.GifsService.borrarItem(index);
+  }
 
 }
